@@ -1,0 +1,899 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>Employee Leave Management System - Project Report</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+    size: 21.0cm 29.7cm; /* A4 */
+    margin: 2.54cm 2.54cm 2.54cm 2.54cm; /* 1 inch margins */
+    mso-page-orientation: portrait;
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    text-align: justify;
+}
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 18pt;
+    margin-bottom: 12pt;
+}
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+}
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+}
+p {
+    margin-bottom: 6pt;
+    text-indent: 0.5in;
+}
+p.no-indent {
+    text-indent: 0;
+}
+.center {
+    text-align: center;
+    text-indent: 0;
+}
+.page-break {
+    page-break-before: always;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8pt;
+    margin-bottom: 12pt;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 6pt 8pt;
+    font-size: 11pt;
+    vertical-align: middle;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+}
+pre, code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    background-color: #f9f9f9;
+}
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 8pt;
+    margin: 8pt 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 9.5pt;
+    line-height: 1.3;
+    white-space: pre-wrap;
+    text-indent: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- TITLE / COVER PAGE -->
+<div class="center" style="margin-top: 30pt;">
+    <h1 style="font-size: 18pt; line-height: 1.3;">EMPLOYEE LEAVE MANAGEMENT SYSTEM: DESIGN AND DEVELOPMENT OF A WEB-BASED LEAVE MANAGEMENT SYSTEM USING JAVA SERVLETS</h1>
+    <br>
+    <p class="center" style="font-size: 12pt; font-weight: normal; margin-bottom: 15pt;">
+        A Skill Oriented Course Web Application / Project Report submitted in partial fulfillment of the requirements for the award of the Degree of
+    </p>
+    <h2 class="center" style="font-size: 15pt; margin-bottom: 4pt;">BACHELOR OF TECHNOLOGY</h2>
+    <p class="center" style="font-size: 13pt; margin-top: 0;">in<br><b>COMPUTER SCIENCE AND ENGINEERING</b></p>
+    <br>
+    <p class="center" style="font-size: 12pt; margin-bottom: 4pt;">Submitted by</p>
+    <h3 class="center" style="font-size: 13pt; margin-top: 0; margin-bottom: 2pt;">PHANITHAPU VENKATA SAI VISHNU</h3>
+    <p class="center" style="font-size: 12pt; font-weight: bold; margin-top: 0;">Roll No: 24761A05V0</p>
+    <br>
+    <p class="center" style="font-size: 12pt; margin-bottom: 4pt;">Under the esteemed guidance of</p>
+    <h3 class="center" style="font-size: 13pt; margin-top: 0; margin-bottom: 2pt;">Mr. N. SrinivasaRao</h3>
+    <p class="center" style="font-size: 11pt; margin-top: 0; font-style: italic;">Sr. Assistant Professor</p>
+    <br><br>
+    <div class="center" style="margin-top: 20pt;">
+        <h3 class="center" style="font-size: 12pt; margin-bottom: 2pt;">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</h3>
+        <h2 class="center" style="font-size: 13pt; margin-top: 0; margin-bottom: 2pt;">LAKIREDDY BALIREDDY COLLEGE OF ENGINEERING (AUTONOMOUS)</h2>
+        <p class="center" style="font-size: 10.5pt; margin-top: 0;">(Accredited by NAAC with ‘A’ Grade & NBA under Tier-I, Approved by AICTE, New Delhi & Affiliated to JNTUK, Kakinada)</p>
+        <p class="center" style="font-size: 11pt; font-weight: bold; margin-top: 2pt;">L.B. Reddy Nagar, Mylavaram, NTR District, Andhra Pradesh – 521230</p>
+        <p class="center" style="font-size: 12pt; font-weight: bold; margin-top: 6pt;">2024–2028</p>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- CERTIFICATE -->
+<div class="center">
+    <h2 class="center" style="font-size: 14pt; margin-bottom: 2pt;">LAKIREDDY BALIREDDY COLLEGE OF ENGINEERING (AUTONOMOUS)</h2>
+    <p class="center" style="font-size: 10pt; margin-top: 0;">Accredited by NAAC with ‘A’ Grade & NBA (Under Tier - I), An ISO 21001:2018, 14001:2015, 50001:2018 Certified Institution<br>Approved by AICTE, New Delhi and Affiliated to JNTUK, Kakinada<br>L.B. REDDY NAGAR, MYLAVARAM, NTR DIST., A.P. - 521230</p>
+    <h3 class="center" style="font-size: 12pt; margin-top: 10pt; text-decoration: underline;">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</h3>
+    <br>
+    <h1 class="center" style="font-size: 16pt; letter-spacing: 2px;">CERTIFICATE</h1>
+</div>
+
+<p>This is to certify that the Skill Oriented Course Web Application / Project Report entitled <b>“Employee Leave Management System: Design and Development of a Web-Based Leave Management System Using Java Servlets”</b> is being submitted by:</p>
+
+<table style="width: 80%; margin: 15pt auto;">
+    <tr>
+        <th>Candidate Name</th>
+        <th>University Roll Number</th>
+    </tr>
+    <tr>
+        <td class="center"><b>PHANITHAPU VENKATA SAI VISHNU</b></td>
+        <td class="center"><b>24761A05V0</b></td>
+    </tr>
+</table>
+
+<p>in partial fulfillment of the requirements for the award of the degree of <b>Bachelor of Technology in Computer Science and Engineering</b> from <b>Jawaharlal Nehru Technological University Kakinada</b>, and is a record of bonafide work carried out at <b>Lakireddy Balireddy College of Engineering (Autonomous)</b>.</p>
+
+<p>The results embodied in this project report have not been submitted to any other university or institute for the award of any degree or diploma.</p>
+
+<br><br><br>
+<table style="border: none; margin-top: 40pt;">
+    <tr style="border: none;">
+        <td style="border: none; text-align: left; width: 50%;">
+            <b>INTERNAL EXAMINER</b>
+        </td>
+        <td style="border: none; text-align: right; width: 50%;">
+            <b>EXTERNAL EXAMINER</b>
+        </td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ACKNOWLEDGEMENT -->
+<h1 class="center">ACKNOWLEDGEMENT</h1>
+
+<p>I would like to express my sincere gratitude to <b>Mr. N. SrinivasaRao</b>, Sr. Assistant Professor, Department of Computer Science and Engineering, for his constant encouragement, invaluable guidance, and constructive advice throughout the design and execution of this Skill Oriented Course Web Application / Project.</p>
+
+<p>I express my heartfelt gratitude to <b>Dr. S. Nagarjuna Reddy</b>, Professor and Head of the Department of Computer Science and Engineering, for his valuable suggestions, cooperation, and academic support.</p>
+
+<p>I also express my deep sense of gratitude to the college management and <b>Dr. K. Appa Rao</b>, Principal, for providing the necessary computing facilities, laboratory infrastructure, and encouragement required to complete this work successfully.</p>
+
+<p>I am thankful to all teaching and non-teaching faculty members of the Department of Computer Science and Engineering for their continuous support and cooperation. Finally, I express my deepest love and heartfelt gratitude to my parents and friends for their enduring moral support and motivation.</p>
+
+<br><br>
+<p class="no-indent" style="text-align: right;">
+    <b>PHANITHAPU VENKATA SAI VISHNU</b><br>
+    Roll No: <b>24761A05V0</b>
+</p>
+
+<div class="page-break"></div>
+
+<!-- DECLARATION -->
+<h1 class="center">DECLARATION</h1>
+
+<p>I hereby declare that the project entitled <b>“Employee Leave Management System: Design and Development of a Web-Based Leave Management System Using Java Servlets”</b> has been carried out by me under the guidance of my supervisor. The work contained in this report is original to the best of my knowledge and has not been submitted to any other institute or university for the award of any degree or diploma.</p>
+
+<p>I have strictly followed the institute’s guidelines in preparing this report. Concepts, methodologies, literature, and software libraries borrowed from other sources have been duly acknowledged and cited in the references.</p>
+
+<br><br><br>
+<p class="no-indent" style="text-align: right;">
+    <b>Signature of the Student</b><br><br>
+    <b>PHANITHAPU VENKATA SAI VISHNU</b><br>
+    Roll No: <b>24761A05V0</b>
+</p>
+
+<div class="page-break"></div>
+
+<!-- ABSTRACT -->
+<h1 class="center">ABSTRACT</h1>
+
+<p>The <b>Employee Leave Management System (ELMS)</b> is a web-based corporate intranet application engineered to automate, streamline, and centralize the process of requesting, approving, and tracking employee leaves within an enterprise. In traditional paper-based or email-reliant administrative workflows, leave requests often suffer from bureaucratic bottlenecks, lack of operational transparency, manual calculation errors, and fragmented record-keeping. The Employee Leave Management System overcomes these systemic inefficiencies by establishing a secure, auditable, and automated client-server ecosystem connecting staff members directly with administrative leadership.</p>
+
+<p>The application backend is built using <b>Java Servlets (Jakarta Servlet API 6.0)</b> hosted on <b>Apache Tomcat 10.1</b>. In strict adherence to robust enterprise architecture, the presentation tier is rendered dynamically through server-side Java presentation utility classes utilizing servlet response streams, strictly avoiding legacy JavaServer Pages (JSP) and eliminating the network latency associated with bulky front-end CSS frameworks. Relational data persistence is managed via <b>Java Database Connectivity (JDBC)</b> interfacing with a <b>MySQL 8.0</b> database management system.</p>
+
+<p>The system implements comprehensive role-based access control, distinguishing between <b>Employee</b> and <b>Administrator</b> roles. The Employee module allows staff members to register, sign in, apply for leaves across six categorized types (Casual, Sick, Earned, Maternity, Paternity, and Unpaid), monitor approval statuses through intuitive real-time status badges, view managerial remarks, and cancel pending requests. The Administrator module equips managers with live statistical summaries, one-click leave approvals or rejections with custom remarks, complete company-wide leave auditing, and an employee directory. The project represents a complete, scalable, and production-ready enterprise software solution.</p>
+
+<div class="page-break"></div>
+
+<!-- LIST OF CONTENTS -->
+<h1 class="center">LIST OF CONTENTS</h1>
+
+<table>
+    <tr>
+        <th style="width: 15%;">Chapter No.</th>
+        <th style="width: 70%;">Title</th>
+        <th style="width: 15%;">Page No.</th>
+    </tr>
+    <tr><td class="center"><b>1.</b></td><td><b>INTRODUCTION</b></td><td class="center"><b>1</b></td></tr>
+    <tr><td></td><td>1.1 Overview of the Project</td><td class="center">1</td></tr>
+    <tr><td></td><td>1.2 Problem Statement</td><td class="center">2</td></tr>
+    <tr><td></td><td>1.3 Objectives</td><td class="center">2</td></tr>
+    <tr><td></td><td>1.4 Scope</td><td class="center">3</td></tr>
+    <tr><td></td><td>1.5 Feasibility Study</td><td class="center">3</td></tr>
+    <tr><td class="center"><b>2.</b></td><td><b>TECHNOLOGIES USED</b></td><td class="center"><b>5</b></td></tr>
+    <tr><td></td><td>2.1 HTML and Embedded Lightweight CSS</td><td class="center">5</td></tr>
+    <tr><td></td><td>2.2 Core Java (JDK 17+)</td><td class="center">5</td></tr>
+    <tr><td></td><td>2.3 Jakarta Servlets (Servlet API 6.0)</td><td class="center">6</td></tr>
+    <tr><td></td><td>2.4 Java Database Connectivity (JDBC) and MySQL</td><td class="center">6</td></tr>
+    <tr><td></td><td>2.5 Apache Maven and Apache Tomcat 10.1</td><td class="center">7</td></tr>
+    <tr><td class="center"><b>3.</b></td><td><b>SYSTEM ANALYSIS AND DESIGN</b></td><td class="center"><b>8</b></td></tr>
+    <tr><td></td><td>3.1 Functional Requirements</td><td class="center">8</td></tr>
+    <tr><td></td><td>3.2 Non-Functional Requirements</td><td class="center">9</td></tr>
+    <tr><td></td><td>3.3 System Architecture</td><td class="center">10</td></tr>
+    <tr><td></td><td>3.4 Database Design</td><td class="center">11</td></tr>
+    <tr><td></td><td>3.5 Use-Case Description</td><td class="center">12</td></tr>
+    <tr><td class="center"><b>4.</b></td><td><b>CODING AND IMPLEMENTATION</b></td><td class="center"><b>14</b></td></tr>
+    <tr><td></td><td>4.1 Project Structure</td><td class="center">14</td></tr>
+    <tr><td></td><td>4.2 Database Connection & Schema Management</td><td class="center">15</td></tr>
+    <tr><td></td><td>4.3 User Authentication and Session Management</td><td class="center">17</td></tr>
+    <tr><td></td><td>4.4 Employee Leave Application and Tracking</td><td class="center">19</td></tr>
+    <tr><td></td><td>4.5 Admin Leave Review and Status Management</td><td class="center">21</td></tr>
+    <tr><td></td><td>4.6 Employee Directory Management</td><td class="center">23</td></tr>
+    <tr><td class="center"><b>5.</b></td><td><b>RESULTS AND SCREENSHOTS</b></td><td class="center"><b>24</b></td></tr>
+    <tr><td class="center"><b>6.</b></td><td><b>TESTING</b></td><td class="center"><b>29</b></td></tr>
+    <tr><td class="center"><b>7.</b></td><td><b>CONCLUSION AND FUTURE ENHANCEMENTS</b></td><td class="center"><b>31</b></td></tr>
+    <tr><td></td><td>7.1 Conclusion</td><td class="center">31</td></tr>
+    <tr><td></td><td>7.2 Future Enhancements</td><td class="center">31</td></tr>
+    <tr><td class="center"><b>8.</b></td><td><b>REFERENCES</b></td><td class="center"><b>33</b></td></tr>
+    <tr><td class="center"><b>APP A</b></td><td><b>CORE CODE EXAMPLES</b></td><td class="center"><b>34</b></td></tr>
+    <tr><td class="center"><b>APP B</b></td><td><b>LIST OF ABBREVIATIONS</b></td><td class="center"><b>38</b></td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- LIST OF ABBREVIATIONS -->
+<h1 class="center">LIST OF ABBREVIATIONS</h1>
+
+<table>
+    <tr>
+        <th style="width: 25%;">Abbreviation</th>
+        <th style="width: 75%;">Full Expansion</th>
+    </tr>
+    <tr><td><b>HTML</b></td><td>HyperText Markup Language</td></tr>
+    <tr><td><b>CSS</b></td><td>Cascading Style Sheets</td></tr>
+    <tr><td><b>JSP</b></td><td>JavaServer Pages</td></tr>
+    <tr><td><b>JDBC</b></td><td>Java Database Connectivity</td></tr>
+    <tr><td><b>SQL</b></td><td>Structured Query Language</td></tr>
+    <tr><td><b>DBMS</b></td><td>Database Management System</td></tr>
+    <tr><td><b>RDBMS</b></td><td>Relational Database Management System</td></tr>
+    <tr><td><b>HTTP</b></td><td>HyperText Transfer Protocol</td></tr>
+    <tr><td><b>HTTPS</b></td><td>HyperText Transfer Protocol Secure</td></tr>
+    <tr><td><b>MVC</b></td><td>Model–View–Controller</td></tr>
+    <tr><td><b>CRUD</b></td><td>Create, Read, Update, Delete</td></tr>
+    <tr><td><b>IDE</b></td><td>Integrated Development Environment</td></tr>
+    <tr><td><b>WAR</b></td><td>Web Application Archive</td></tr>
+    <tr><td><b>JDK</b></td><td>Java Development Kit</td></tr>
+    <tr><td><b>JRE</b></td><td>Java Runtime Environment</td></tr>
+    <tr><td><b>UI</b></td><td>User Interface</td></tr>
+    <tr><td><b>UX</b></td><td>User Experience</td></tr>
+    <tr><td><b>API</b></td><td>Application Programming Interface</td></tr>
+    <tr><td><b>PK</b></td><td>Primary Key</td></tr>
+    <tr><td><b>FK</b></td><td>Foreign Key</td></tr>
+    <tr><td><b>XSS</b></td><td>Cross-Site Scripting</td></tr>
+    <tr><td><b>DAO</b></td><td>Data Access Object</td></tr>
+    <tr><td><b>ELMS</b></td><td>Employee Leave Management System</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 1 -->
+<h1>1. INTRODUCTION</h1>
+
+<h2>1.1 Overview of the Project</h2>
+<p>The <b>Employee Leave Management System (ELMS)</b> is an automated intranet web application designed to handle all aspects of employee leave administration within corporate and institutional setups. In modern workplace environments, managing human resources and workforce availability is vital to organizational productivity, customer satisfaction, and operational continuity.</p>
+
+<p>The ELMS replaces slow, error-prone manual paper trails and unstructured email correspondence with an automated, secure web workflow. Built entirely using modern <b>Java Servlet technology</b> on the backend and direct HTML streaming via Java presentation classes on the client tier, the application ensures high reliability, clean architecture, and rapid response times without reliance on heavy client-side JavaScript frameworks or legacy JavaServer Pages (JSP).</p>
+
+<h2>1.2 Problem Statement</h2>
+<p>Traditional leave processing within organizations involves physical paper application forms, manual signatures from managers, verbal requests, or unstructured email exchanges. This approach introduces significant problems:</p>
+<p class="no-indent">
+1. <b>Time Consumption:</b> Applications take days to route between employees, department heads, and human resource personnel.<br>
+2. <b>Lack of Transparency:</b> Employees have no real-time insight into the review status of their applications or reasons for refusal.<br>
+3. <b>Record Inaccuracy:</b> Manual ledger entries are prone to calculation errors, missing dates, duplicate approvals, and lost papers.<br>
+4. <b>Administrative Overhead:</b> HR managers must manually calculate leave balances, compile department availability sheets, and maintain audit trails.
+</p>
+
+<h2>1.3 Objectives</h2>
+<p>The principal objectives of the Employee Leave Management System are:</p>
+<p class="no-indent">
+• <b>Centralized Authentication:</b> Provide secure user registration, credential validation, and role-based session routing for Employees and Administrators.<br>
+• <b>Categorized Leave Application:</b> Allow employees to submit leave requests specifying leave type (Casual, Sick, Earned, Maternity, Paternity, Unpaid), date boundaries, and detailed justifications.<br>
+• <b>Real-Time Tracking & Badging:</b> Offer an intuitive dashboard where employees monitor leave progression through visual status indicators (<i>Pending</i>, <i>Approved</i>, <i>Rejected</i>).<br>
+• <b>Administrative Decision Workflow:</b> Empower administrators with interactive dashboards to inspect employee requests, make one-click approval or rejection decisions, and attach explanatory remarks.<br>
+• <b>Auditability & Cancellation:</b> Permit employees to cancel unresolved pending leaves while maintaining historical logs of all processed leaves.<br>
+• <b>Directory & Resource Oversight:</b> Enable management to review company-wide employee directories, department distributions, and collective leave statistics.
+</p>
+
+<h2>1.4 Scope</h2>
+<p>The project encompasses:</p>
+<p class="no-indent">
+• Core employee self-service modules: account creation, login, session termination, dashboard metrics, leave application forms, and historical leave tracking.<br>
+• Administrative management modules: centralized executive dashboard, pending leave action panels, historical leave review, decision remarks recording, and staff directory inspection.<br>
+• Server-side data validation, relational persistence via JDBC, automatic database schema bootstrapping, and cross-site scripting (XSS) prevention.<br>
+• Out of scope: Third-party payroll integrations, automated email/SMS push gateways, biometric punch-clock synchronization, and enterprise single sign-on (SSO) protocols.
+</p>
+
+<h2>1.5 Feasibility Study</h2>
+<p><b>Technical Feasibility:</b> The platform is built on enterprise-grade, established technologies: Core Java (JDK 17+), Jakarta Servlet API 6.0, JDBC, MySQL 8.0, Apache Maven, and Apache Tomcat 10.1. All components run stably on standard operating systems and require minimal hardware footprints, rendering the system technically robust.</p>
+
+<p><b>Economic Feasibility:</b> The complete software stack comprises open-source and free technologies—Java SE, Apache Tomcat, MySQL Community Server, and Maven. Development, deployment, and testing require no commercial software licenses, making the system cost-effective.</p>
+
+<p><b>Operational Feasibility:</b> The user interface adheres to clean, ergonomic, and uncluttered design standards. Forms feature intuitive dropdowns, HTML5 date selectors, and clear action buttons. Users with basic web browsing skills can navigate the system effortlessly.</p>
+
+<p><b>Schedule Feasibility:</b> The modular design of the application allowed iterative development divided into distinct milestones: database modeling, DAO implementation, authentication servlets, employee portals, administrative review workflows, testing, and documentation, ensuring completion well within academic deadlines.</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 2 -->
+<h1>2. TECHNOLOGIES USED</h1>
+
+<h2>2.1 HTML and Embedded Lightweight CSS</h2>
+<p>The user interface is generated through clean HTML markup rendered directly by server-side Java presentation components (<code>HtmlTemplate.java</code>). Rather than loading heavy external CSS frameworks such as Bootstrap, Tailwind, or complex JavaScript bundles that increase page weight and network latency, the application uses an optimized, embedded CSS styling strategy:</p>
+<p class="no-indent">
+• Clean typography utilizing modern system font stacks (<code>'Segoe UI', Tahoma, Geneva, Verdana, sans-serif</code>).<br>
+• Consistent color palettes conveying authority and hierarchy (navy headers <code>#1e293b</code>, royal blue accents <code>#2563eb</code>, green success indicators <code>#16a34a</code>, amber warnings <code>#d97706</code>, and red alerts <code>#dc2626</code>).<br>
+• Responsive, flexible layouts using CSS Flexbox for metric cards, forms, and data tables.<br>
+• Zero client-side external asset dependencies, ensuring immediate page load speeds and full offline intranet capability.
+</p>
+
+<h2>2.2 Core Java (JDK 17+)</h2>
+<p>Java serves as the foundation for all server-side application logic. Its strong typing, object-oriented principles, exception handling, and platform independence make it ideal for transactional enterprise web systems. Java 17+ LTS language features ensure high performance, security, and long-term maintainability.</p>
+
+<h2>2.3 Jakarta Servlets (Servlet API 6.0)</h2>
+<p>Jakarta Servlets act as controller components within the application. Servlets map incoming HTTP requests (<code>GET</code> and <code>POST</code>) to business logic methods, manage user sessions via <code>HttpSession</code>, validate submitted form parameters, coordinate data retrieval with DAO classes, and stream sanitized HTML markup back to the client browser. The project adheres to Servlet API 6.0 specifications compatible with modern application servers.</p>
+
+<h2>2.4 Java Database Connectivity (JDBC) and MySQL</h2>
+<p>Data persistence is handled by <b>MySQL 8.0</b> connected through the official <b>MySQL Connector/J 8.4.0</b> driver using standard Java Database Connectivity (JDBC):</p>
+<p class="no-indent">
+• <b>PreparedStatements:</b> All SQL queries use parameterized <code>PreparedStatement</code> interfaces, completely preventing SQL Injection vulnerabilities.<br>
+• <b>Relational Integrity:</b> Foreign key constraints with cascading rules link leave requests to employee identities.<br>
+• <b>Dual-Engine Architecture:</b> The data layer supports native MySQL 8.0 as the primary production database while retaining transparent fallback compatibility with embedded H2 databases.
+</p>
+
+<h2>2.5 Apache Maven and Apache Tomcat 10.1</h2>
+<p><b>Apache Maven 3.9:</b> Serves as the build automation and dependency management tool, assembling compiled classes, web configuration files, and JDBC libraries into a standard Web Application Archive (<code>leavemanagement.war</code>).</p>
+<p><b>Apache Tomcat 10.1:</b> An open-source, high-performance web server and servlet container implementing Jakarta Servlet 6.0 specifications, hosting the deployed application.</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 3 -->
+<h1>3. SYSTEM ANALYSIS AND DESIGN</h1>
+
+<h2>3.1 Functional Requirements</h2>
+<h3>Employee Module:</h3>
+<p class="no-indent">
+1. <b>User Registration:</b> Visitors can register with their full name, email address, secure password, and department.<br>
+2. <b>User Login & Session Management:</b> Authenticated employees gain access to personal dashboards with session timeouts and secure logout.<br>
+3. <b>Leave Application:</b> Employees can apply for leaves by selecting leave types, choosing valid start and end dates, and supplying explanations.<br>
+4. <b>Dashboard Summaries:</b> Employees view live counters for Pending, Approved, and Rejected requests alongside recent submissions.<br>
+5. <b>Leave Tracking & History:</b> Employees can inspect the complete history of their leaves, view approval badges, and read administrative feedback.<br>
+6. <b>Application Cancellation:</b> Employees can cancel their own unresolved <i>Pending</i> requests with one click.
+</p>
+
+<h3>Administrator Module:</h3>
+<p class="no-indent">
+1. <b>Executive Overview:</b> Administrators view organizational statistics: total registered staff, pending approvals, approved leaves, and rejected counts.<br>
+2. <b>Pending Request Review:</b> An action panel displays all pending leaves with immediate <b>Approve</b> and <b>Reject</b> buttons and custom remarks input fields.<br>
+3. <b>Company-Wide Leave Audit:</b> Administrators can browse, sort, and inspect all leave records across the organization.<br>
+4. <b>Employee Directory:</b> Administrators can browse all registered personnel, departmental distributions, and cumulative leave tallies.
+</p>
+
+<h2>3.2 Non-Functional Requirements</h2>
+<p><b>Security:</b> Strict separation of privileges between Employees and Admins; parameterized SQL queries to prevent SQL Injection; HTML escaping across all dynamic fields to eliminate Cross-Site Scripting (XSS); secure session invalidation.</p>
+<p><b>Usability:</b> Clean visual presentation with clear status badges, responsive tabular layouts, and intuitive form controls requiring no user manuals.</p>
+<p><b>Performance:</b> Direct servlet HTML rendering without JSP translation overhead guarantees sub-second page response times.</p>
+<p><b>Reliability:</b> Automated schema generation and self-healing database initialization ensure zero deployment downtime.</p>
+<p><b>Portability:</b> Standard Java EE WAR packaging guarantees immediate deployment to any compliant servlet container across Windows, Linux, or cloud environments.</p>
+
+<h2>3.3 System Architecture</h2>
+<p>The application employs a layered client-server architecture based on Model-View-Controller (MVC) principles:</p>
+
+<div class="code-block">
+[ Web Browser (Client Presentation Tier) ]
+                 │
+                 ▼  HTTP Requests (GET / POST)
+[ Jakarta Servlet Controllers (Controller Tier) ]
+   ├── LoginServlet / RegisterServlet / LogoutServlet
+   ├── DashboardServlet / ApplyLeaveServlet / LeaveHistoryServlet
+   └── AdminDashboardServlet / ManageLeavesServlet / EmployeesServlet
+                 │
+                 ▼  Business Logic & Parameter Validation
+[ Model & Utility Tier ]
+   ├── Employee.java / LeaveRequest.java (Entity Models)
+   └── HtmlTemplate.java (Presentation Utility / Sanitization)
+                 │
+                 ▼  JDBC Calls (PreparedStatement)
+[ Data Access Tier (DatabaseHelper.java) ]
+                 │
+                 ▼  SQL Queries / ResultSets
+[ MySQL 8.0 Relational Database (leave_db) ]
+</div>
+
+<h2>3.4 Database Design</h2>
+<p>The relational schema comprises two core normalized entities in third normal form (3NF):</p>
+
+<h3>1. <code>employees</code> Table</h3>
+<table>
+    <tr>
+        <th>Column Name</th>
+        <th>Data Type</th>
+        <th>Constraints</th>
+        <th>Description</th>
+    </tr>
+    <tr><td><code>id</code></td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique employee identifier</td></tr>
+    <tr><td><code>name</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Full name of the employee</td></tr>
+    <tr><td><code>email</code></td><td>VARCHAR(100)</td><td>UNIQUE, NOT NULL</td><td>Login email address</td></tr>
+    <tr><td><code>password</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Account authentication password</td></tr>
+    <tr><td><code>department</code></td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Assigned organizational department</td></tr>
+    <tr><td><code>role</code></td><td>VARCHAR(20)</td><td>DEFAULT 'employee'</td><td>Access role (<code>admin</code> or <code>employee</code>)</td></tr>
+</table>
+
+<h3>2. <code>leave_requests</code> Table</h3>
+<table>
+    <tr>
+        <th>Column Name</th>
+        <th>Data Type</th>
+        <th>Constraints</th>
+        <th>Description</th>
+    </tr>
+    <tr><td><code>id</code></td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique leave request identifier</td></tr>
+    <tr><td><code>employee_id</code></td><td>INT</td><td>NOT NULL, FK &rarr; employees(id)</td><td>Associated employee reference</td></tr>
+    <tr><td><code>leave_type</code></td><td>VARCHAR(30)</td><td>NOT NULL</td><td>Type of leave (Casual, Sick, etc.)</td></tr>
+    <tr><td><code>start_date</code></td><td>DATE</td><td>NOT NULL</td><td>Beginning date of leave</td></tr>
+    <tr><td><code>end_date</code></td><td>DATE</td><td>NOT NULL</td><td>Concluding date of leave</td></tr>
+    <tr><td><code>reason</code></td><td>VARCHAR(500)</td><td>NOT NULL</td><td>Employee justification</td></tr>
+    <tr><td><code>status</code></td><td>VARCHAR(20)</td><td>DEFAULT 'Pending'</td><td>Current status (Pending, Approved, Rejected)</td></tr>
+    <tr><td><code>applied_date</code></td><td>DATE</td><td>DEFAULT CURRENT_DATE</td><td>Date on which leave was submitted</td></tr>
+    <tr><td><code>admin_remarks</code></td><td>VARCHAR(300)</td><td>NULL</td><td>Explanatory note from administrator</td></tr>
+</table>
+
+<h2>3.5 Use-Case Description</h2>
+<p><b>Primary Actors:</b></p>
+<p class="no-indent">
+• <b>Employee:</b> An authenticated staff member who applies for leaves, monitors approval statuses, and manages personal requests.<br>
+• <b>Administrator:</b> A privileged manager responsible for reviewing leave applications, approving or rejecting requests, and auditing workforce availability.
+</p>
+
+<p><b>Main Scenarios:</b></p>
+<p class="no-indent">
+• <i>Employee Applies for Leave:</i> Employee logs in &rarr; selects "Apply Leave" &rarr; specifies leave type, date range, and reason &rarr; system validates date order &rarr; request saved with status <code>Pending</code>.<br>
+• <i>Administrator Reviews Leave:</i> Administrator logs in &rarr; opens Admin Dashboard &rarr; views pending request &rarr; enters optional remarks &rarr; clicks "Approve" or "Reject" &rarr; database updates status and remarks &rarr; employee dashboard reflects decision immediately.<br>
+• <i>Employee Cancels Leave:</i> Employee opens Leave History &rarr; identifies a <code>Pending</code> request &rarr; clicks "Cancel" &rarr; system verifies ownership and status &rarr; record deleted safely.
+</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 4 -->
+<h1>4. CODING AND IMPLEMENTATION</h1>
+
+<h2>4.1 Project Structure</h2>
+<div class="code-block">
+fsd2/
+├── pom.xml                                      # Build dependencies & WAR packaging
+├── build.bat                                    # Automated build batch script
+├── deploy.bat                                   # Automated deployment to Tomcat
+├── README.md                                    # Setup & user documentation
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/leavemanagement/
+        │       ├── model/
+        │       │   ├── Employee.java            # Employee entity class
+        │       │   └── LeaveRequest.java        # Leave request entity class
+        │       ├── dao/
+        │       │   └── DatabaseHelper.java      # JDBC connection & data access layer
+        │       ├── util/
+        │       │   └── HtmlTemplate.java        # Dynamic HTML & lightweight CSS generator
+        │       └── servlet/
+        │           ├── LoginServlet.java         # /login - User authentication
+        │           ├── RegisterServlet.java      # /register - Account registration
+        │           ├── LogoutServlet.java        # /logout - Session invalidation
+        │           ├── DashboardServlet.java     # /dashboard - Employee overview
+        │           ├── ApplyLeaveServlet.java    # /apply-leave - Leave application
+        │           ├── LeaveHistoryServlet.java  # /leave-history - Employee history & cancel
+        │           ├── AdminDashboardServlet.java# /admin-dashboard - Admin action center
+        │           ├── ManageLeavesServlet.java  # /manage-leaves - Company leave audit
+        │           └── EmployeesServlet.java     # /employees - Staff directory
+        └── webapp/
+            └── WEB-INF/
+                └── web.xml                      # Deployment descriptor (Jakarta EE 6.0)
+</div>
+
+<h2>4.2 Database Connection & Schema Management</h2>
+<p>The <code>DatabaseHelper.java</code> class implements <code>ServletContextListener</code> and manages the database lifecycle. Upon servlet container startup, <code>contextInitialized()</code> creates the MySQL schema and tables automatically if they do not already exist, and initializes the default administrator account.</p>
+
+<p>Connection parameters are defined as constants at the head of the file:</p>
+<p class="no-indent">
+• <code>MYSQL_URL</code>: <code>jdbc:mysql://localhost:3306/leave_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true</code><br>
+• <code>MYSQL_USER</code>: <code>root</code><br>
+• <code>MYSQL_PASS</code>: Configurable database password
+</p>
+
+<h2>4.3 User Authentication and Session Management</h2>
+<p><b>Registration (<code>RegisterServlet.java</code>):</b> Accepts user details, validates that all fields are populated, enforces email uniqueness in the database, and creates an employee record with <code>role = 'employee'</code>.</p>
+<p><b>Authentication (<code>LoginServlet.java</code>):</b> Queries the <code>employees</code> table using a <code>PreparedStatement</code>. Upon verification, an <code>HttpSession</code> is initialized with the authenticated user object. Role-based redirection automatically routes users:</p>
+<p class="no-indent">
+• <code>role.equals("admin")</code> &rarr; <code>admin-dashboard</code><br>
+• <code>role.equals("employee")</code> &rarr; <code>dashboard</code>
+</p>
+<p><b>Logout (<code>LogoutServlet.java</code>):</b> Terminates the session via <code>session.invalidate()</code> and returns the user to the login screen.</p>
+
+<h2>4.4 Employee Leave Application and Tracking</h2>
+<p><b>Application Submission (<code>ApplyLeaveServlet.java</code>):</b> Processes leave submissions. The servlet validates that the end date does not precede the start date (<code>startDate.compareTo(endDate) &lt;= 0</code>) before persisting the request with default status <code>Pending</code>.</p>
+<p><b>Dashboard & Metrics (<code>DashboardServlet.java</code>):</b> Queries <code>DatabaseHelper</code> for counts of pending, approved, and rejected leaves, rendering visual summary cards and a quick-view table of recent applications.</p>
+<p><b>History & Cancellation (<code>LeaveHistoryServlet.java</code>):</b> Displays an interactive table of all leaves filed by the logged-in user. Any request currently in <code>Pending</code> status displays a "Cancel" button, allowing safe removal.</p>
+
+<h2>4.5 Admin Leave Review and Status Management</h2>
+<p><b>Admin Dashboard (<code>AdminDashboardServlet.java</code>):</b> Displays organizational metrics alongside an actionable pending requests table. Each pending record provides inline input for optional remarks and immediate <b>Approve</b> and <b>Reject</b> buttons.</p>
+<p><b>Company Management (<code>ManageLeavesServlet.java</code>):</b> Provides full administrative auditing across all historical records, supporting status updates with custom managerial remarks.</p>
+
+<h2>4.6 Employee Directory Management</h2>
+<p><b>Directory Inspection (<code>EmployeesServlet.java</code>):</b> Lists all registered personnel with their respective department, system role, pending leave counts, and approved leave totals, giving leadership an immediate high-level view of staff availability.</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 5 -->
+<h1>5. RESULTS AND SCREENSHOTS</h1>
+
+<p>The application was deployed and verified on <b>Apache Tomcat 10.1</b> on <code>http://localhost:8080/leavemanagement/</code>. The following sections describe each verified interface.</p>
+
+<h3>5.1 Login Interface (<code>/login</code>)</h3>
+<p>The entrance portal features a clean, focused login card where users authenticate with their registered email address and password. It includes a link to the registration page and a helper box showing administrator demo credentials (<code>admin@company.com</code> / <code>admin123</code>).</p>
+
+<h3>5.2 Registration Interface (<code>/register</code>)</h3>
+<p>Provides an intuitive onboarding form where new employees register their Full Name, Email, Password (minimum 4 characters), and Department from a standardized dropdown list (IT Development, Human Resources, Finance & Accounts, Marketing & Sales, Operations, Customer Support).</p>
+
+<h3>5.3 Employee Dashboard (<code>/dashboard</code>)</h3>
+<p>Serves as the employee's operational hub. It displays a welcome banner showing their department and email, four colored metric cards (Pending Requests in amber, Approved Leaves in green, Rejected Requests in red, and Total Applications in blue), a shortcut button to apply for leave, and a table of the 5 most recent leave applications.</p>
+
+<h3>5.4 Apply Leave Form (<code>/apply-leave</code>)</h3>
+<p>Presents an ergonomic form enabling employees to select from 6 distinct leave types: Casual Leave (CL), Sick Leave (SL), Earned Leave (EL), Maternity Leave, Paternity Leave, and Unpaid Leave / Loss of Pay. Includes HTML5 date controls for Start Date and End Date, a multi-line justification textarea, and server validation ensuring valid date sequencing.</p>
+
+<h3>5.5 Leave History & Cancellation (<code>/leave-history</code>)</h3>
+<p>Displays a comprehensive tabular log of all personal leave requests showing leave type, duration, justification, applied date, status badge, and administrator feedback remarks. Active <code>Pending</code> applications feature an interactive red <b>Cancel</b> button with confirmation prompts.</p>
+
+<h3>5.6 Admin Dashboard (<code>/admin-dashboard</code>)</h3>
+<p>Provides executive management with high-level summaries: total registered personnel, pending reviews, approved requests, and rejected counts. An actionable review table lists all pending applications, employee details, dates, and justifications, equipped with inline remarks fields and <b>Approve</b> and <b>Reject</b> action triggers.</p>
+
+<h3>5.7 Manage All Leaves (<code>/manage-leaves</code>)</h3>
+<p>Offers full visibility over company-wide leave records with detailed status badges (<i>Approved</i>, <i>Pending</i>, <i>Rejected</i>), recorded administrative feedback, and audit timestamps.</p>
+
+<h3>5.8 Employee Directory (<code>/employees</code>)</h3>
+<p>Presents an administrative listing of all registered staff members, their departments, assigned privileges, and current leave statistics.</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 6 -->
+<h1>6. TESTING</h1>
+
+<p>Functional, integration, and security testing were conducted on the deployed application running against Apache Tomcat 10.1 and MySQL 8.0.</p>
+
+<table>
+    <tr>
+        <th>Test ID</th>
+        <th>Test Scenario</th>
+        <th>Input / Action</th>
+        <th>Expected Result</th>
+        <th>Actual Result</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-01</b></td>
+        <td>User Registration</td>
+        <td>Submit valid employee details (Name, Email, Password, Department)</td>
+        <td>New account created; redirect to login with success alert</td>
+        <td>Account created in MySQL; success notification shown</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-02</b></td>
+        <td>Duplicate Registration</td>
+        <td>Register with an email address that already exists</td>
+        <td>Registration rejected; friendly error message displayed</td>
+        <td>Rejected by unique constraint; error banner shown</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-03</b></td>
+        <td>Valid Admin Login</td>
+        <td>Submit <code>admin@company.com</code> and <code>admin123</code></td>
+        <td>Authentication succeeds; routed to <code>/admin-dashboard</code></td>
+        <td>Logged in; admin dashboard displayed</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-04</b></td>
+        <td>Valid Employee Login</td>
+        <td>Submit valid employee credentials</td>
+        <td>Authentication succeeds; routed to <code>/dashboard</code></td>
+        <td>Logged in; employee dashboard displayed</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-05</b></td>
+        <td>Invalid Login</td>
+        <td>Submit incorrect password or non-existent email</td>
+        <td>Authentication fails; redirected to login with error alert</td>
+        <td>Access denied; error message shown</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-06</b></td>
+        <td>Session Protection</td>
+        <td>Access protected pages directly without logging in</td>
+        <td>Unauthenticated request intercepted; redirected to <code>/login</code></td>
+        <td>Access blocked; redirected to login</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-07</b></td>
+        <td>Role Authorization</td>
+        <td>Employee attempts direct access to <code>/admin-dashboard</code></td>
+        <td>Non-admin access intercepted; redirected to employee <code>/dashboard</code></td>
+        <td>Access denied; redirected to employee dashboard</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-08</b></td>
+        <td>Apply Valid Leave</td>
+        <td>Submit leave with Start Date &lt;= End Date and valid reason</td>
+        <td>Leave stored in MySQL with status <code>Pending</code></td>
+        <td>Leave recorded in table; success banner shown</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-09</b></td>
+        <td>Invalid Date Order</td>
+        <td>Submit leave where Start Date &gt; End Date</td>
+        <td>Application rejected by validation; error shown</td>
+        <td>Application rejected; error banner displayed</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-10</b></td>
+        <td>Admin Approve Leave</td>
+        <td>Admin clicks "Approve" with remarks on pending leave</td>
+        <td>Status updated to <code>Approved</code>; remarks saved</td>
+        <td>MySQL record updated; remarks saved</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-11</b></td>
+        <td>Admin Reject Leave</td>
+        <td>Admin clicks "Reject" with explanation remarks</td>
+        <td>Status updated to <code>Rejected</code>; remarks saved</td>
+        <td>MySQL record updated; remarks saved</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-12</b></td>
+        <td>Cancel Pending Leave</td>
+        <td>Employee clicks "Cancel" on a <code>Pending</code> leave</td>
+        <td>Pending request removed from database; history updated</td>
+        <td>Record deleted safely; cancellation alert shown</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+    <tr>
+        <td class="center"><b>TC-13</b></td>
+        <td>User Logout</td>
+        <td>Click "Logout" in navigation bar</td>
+        <td><code>HttpSession</code> invalidated; redirected to <code>/login</code></td>
+        <td>Session terminated; protected pages blocked</td>
+        <td class="center"><b>PASSED</b></td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 7 -->
+<h1>7. CONCLUSION AND FUTURE ENHANCEMENTS</h1>
+
+<h2>7.1 Conclusion</h2>
+<p>The <b>Employee Leave Management System (ELMS)</b> successfully demonstrates an automated, secure, and user-friendly web solution for corporate and academic absence tracking. By utilizing pure <b>Java Servlets (Jakarta Servlet API 6.0)</b>, direct dynamic HTML streaming via Java classes, and <b>JDBC with MySQL 8.0</b>, the application achieves exceptional response performance and structural clarity without relying on legacy JSP files or bulky external CSS frameworks.</p>
+
+<p>The system delivers distinct, role-based workflows for employees and administrators, eliminating paper handling, expediting decision turnarounds, and maintaining transparent, audit-ready records. The project satisfies all academic objectives of the Skill Oriented Course and stands as a complete, practical enterprise software implementation.</p>
+
+<h2>7.2 Future Enhancements</h2>
+<p class="no-indent">
+1. <b>Automated Notifications:</b> Integration of JavaMail API to send real-time email notifications to employees upon approval or rejection of their leaves.<br>
+2. <b>Leave Balance Quotas:</b> Implementation of annual leave quotas (e.g., 12 Casual Leaves, 10 Sick Leaves per year) with automatic balance deductions upon approval.<br>
+3. <b>Document Attachment:</b> Enabling file uploads allowing employees to attach medical certificates or supporting documents for sick or maternity leave requests.<br>
+4. <b>Calendar Visualization:</b> An interactive monthly organizational calendar displaying approved leaves to prevent department understaffing.<br>
+5. <b>Password Hashing (jBCrypt):</b> Upgrading plaintext database passwords to cryptographic hash digests (e.g., BCrypt / Argon2) with salt generation.<br>
+6. <b>PDF Report Generation:</b> Allowing HR administrators to export monthly absence summaries and audit logs directly to formatted PDF or Excel documents.
+</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER 8 -->
+<h1>8. REFERENCES</h1>
+
+<p class="no-indent">
+1. Eclipse Foundation. <i>Jakarta Servlet Specification 6.0</i>. https://jakarta.ee/specifications/servlet/6.0/<br>
+2. Oracle Corporation. <i>Java SE 17 and Java Platform Documentation</i>. https://docs.oracle.com/en/java/javase/17/<br>
+3. Oracle Corporation. <i>Java Database Connectivity (JDBC) Guide</i>. https://docs.oracle.com/javase/tutorial/jdbc/<br>
+4. MySQL AB / Oracle Corporation. <i>MySQL 8.0 Reference Manual</i>. https://dev.mysql.com/doc/refman/8.0/en/<br>
+5. MySQL AB / Oracle Corporation. <i>MySQL Connector/J 8.4 Developer Guide</i>. https://dev.mysql.com/doc/connector-j/en/<br>
+6. Apache Software Foundation. <i>Apache Tomcat 10.1 Documentation</i>. https://tomcat.apache.org/tomcat-10.1-doc/<br>
+7. Apache Software Foundation. <i>Apache Maven Project Documentation</i>. https://maven.apache.org/guides/<br>
+8. OWASP Foundation. <i>Cross-Site Scripting (XSS) and SQL Injection Prevention Cheat Sheets</i>. https://cheatsheetseries.owasp.org/
+</p>
+
+<div class="page-break"></div>
+
+<!-- APPENDIX A -->
+<h1>APPENDIX A: CORE CODE EXAMPLES</h1>
+
+<h3>A.1 Database Connection and Table Creation (<code>DatabaseHelper.java</code>)</h3>
+<div class="code-block">
+public static Connection getConnection() throws SQLException {
+    if (!initialized) {
+        initDatabase();
+    }
+    return DriverManager.getConnection(MYSQL_URL, MYSQL_USER, MYSQL_PASS);
+}
+
+private static void createTables() {
+    String employeeTable = "CREATE TABLE IF NOT EXISTS employees ("
+            + "id INT AUTO_INCREMENT PRIMARY KEY, "
+            + "name VARCHAR(100) NOT NULL, "
+            + "email VARCHAR(100) UNIQUE NOT NULL, "
+            + "password VARCHAR(100) NOT NULL, "
+            + "department VARCHAR(50) NOT NULL, "
+            + "role VARCHAR(20) DEFAULT 'employee')";
+
+    String leaveTable = "CREATE TABLE IF NOT EXISTS leave_requests ("
+            + "id INT AUTO_INCREMENT PRIMARY KEY, "
+            + "employee_id INT NOT NULL, "
+            + "leave_type VARCHAR(30) NOT NULL, "
+            + "start_date DATE NOT NULL, "
+            + "end_date DATE NOT NULL, "
+            + "reason VARCHAR(500), "
+            + "status VARCHAR(20) DEFAULT 'Pending', "
+            + "applied_date DATE, "
+            + "admin_remarks VARCHAR(300), "
+            + "FOREIGN KEY (employee_id) REFERENCES employees(id) ON DELETE CASCADE)";
+
+    try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
+        stmt.execute(employeeTable);
+        stmt.execute(leaveTable);
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+</div>
+
+<h3>A.2 User Authentication and Role-Based Redirection (<code>LoginServlet.java</code>)</h3>
+<div class="code-block">
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    String email = req.getParameter("email");
+    String password = req.getParameter("password");
+
+    Employee emp = DatabaseHelper.authenticate(email, password);
+    if (emp != null) {
+        HttpSession session = req.getSession(true);
+        session.setAttribute("employee", emp);
+        if ("admin".equals(emp.getRole())) {
+            resp.sendRedirect("admin-dashboard");
+        } else {
+            resp.sendRedirect("dashboard");
+        }
+    } else {
+        resp.sendRedirect("login?error=1");
+    }
+}
+</div>
+
+<h3>A.3 Leave Application Submission with Date Validation (<code>ApplyLeaveServlet.java</code>)</h3>
+<div class="code-block">
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    HttpSession session = req.getSession(false);
+    if (session == null || session.getAttribute("employee") == null) {
+        resp.sendRedirect("login");
+        return;
+    }
+    Employee emp = (Employee) session.getAttribute("employee");
+
+    String leaveType = req.getParameter("leaveType");
+    String startDate = req.getParameter("startDate");
+    String endDate = req.getParameter("endDate");
+    String reason = req.getParameter("reason");
+
+    // Validate date order
+    if (startDate.compareTo(endDate) > 0) {
+        resp.sendRedirect("apply-leave?error=1");
+        return;
+    }
+
+    boolean success = DatabaseHelper.applyLeave(emp.getId(), leaveType.trim(), startDate.trim(), endDate.trim(), reason.trim());
+    if (success) {
+        resp.sendRedirect("apply-leave?success=1");
+    } else {
+        resp.sendRedirect("apply-leave?error=1");
+    }
+}
+</div>
+
+<h3>A.4 Administrative Leave Status Update (<code>ManageLeavesServlet.java</code>)</h3>
+<div class="code-block">
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    HttpSession session = req.getSession(false);
+    if (session == null || session.getAttribute("employee") == null) {
+        resp.sendRedirect("login");
+        return;
+    }
+    Employee emp = (Employee) session.getAttribute("employee");
+    if (!"admin".equals(emp.getRole())) {
+        resp.sendRedirect("dashboard");
+        return;
+    }
+
+    try {
+        int leaveId = Integer.parseInt(req.getParameter("leaveId"));
+        String action = req.getParameter("action");
+        String remarks = req.getParameter("remarks");
+        if (remarks == null) remarks = "";
+
+        DatabaseHelper.updateLeaveStatus(leaveId, action, remarks.trim());
+    } catch (Exception ignored) {}
+
+    resp.sendRedirect("manage-leaves?msg=1");
+}
+</div>
+
+<div class="page-break"></div>
+
+<!-- APPENDIX B -->
+<h1>APPENDIX B: LIST OF ABBREVIATIONS</h1>
+
+<table>
+    <tr>
+        <th style="width: 25%;">Abbreviation</th>
+        <th style="width: 75%;">Full Expansion</th>
+    </tr>
+    <tr><td><b>HTML</b></td><td>HyperText Markup Language</td></tr>
+    <tr><td><b>CSS</b></td><td>Cascading Style Sheets</td></tr>
+    <tr><td><b>JSP</b></td><td>JavaServer Pages</td></tr>
+    <tr><td><b>JDBC</b></td><td>Java Database Connectivity</td></tr>
+    <tr><td><b>SQL</b></td><td>Structured Query Language</td></tr>
+    <tr><td><b>DBMS</b></td><td>Database Management System</td></tr>
+    <tr><td><b>RDBMS</b></td><td>Relational Database Management System</td></tr>
+    <tr><td><b>HTTP</b></td><td>Hypertext Transfer Protocol</td></tr>
+    <tr><td><b>HTTPS</b></td><td>Hypertext Transfer Protocol Secure</td></tr>
+    <tr><td><b>MVC</b></td><td>Model–View–Controller</td></tr>
+    <tr><td><b>CRUD</b></td><td>Create, Read, Update, Delete</td></tr>
+    <tr><td><b>IDE</b></td><td>Integrated Development Environment</td></tr>
+    <tr><td><b>WAR</b></td><td>Web Application Archive</td></tr>
+    <tr><td><b>JDK</b></td><td>Java Development Kit</td></tr>
+    <tr><td><b>JRE</b></td><td>Java Runtime Environment</td></tr>
+    <tr><td><b>UI</b></td><td>User Interface</td></tr>
+    <tr><td><b>UX</b></td><td>User Experience</td></tr>
+    <tr><td><b>API</b></td><td>Application Programming Interface</td></tr>
+    <tr><td><b>PK</b></td><td>Primary Key</td></tr>
+    <tr><td><b>FK</b></td><td>Foreign Key</td></tr>
+    <tr><td><b>XSS</b></td><td>Cross-Site Scripting</td></tr>
+    <tr><td><b>DAO</b></td><td>Data Access Object</td></tr>
+    <tr><td><b>ELMS</b></td><td>Employee Leave Management System</td></tr>
+</table>
+
+</body>
+</html>
+
